@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Character } from 'src/app/models/data-models';
 
 @Component({
   selector: 'app-stats-chara',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class StatsCharaComponent {
 
+  @Input() character!: Character;
 }

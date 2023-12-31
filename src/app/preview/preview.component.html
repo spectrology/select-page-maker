@@ -10,7 +10,7 @@ Filter and tag options here
     <div class="row">
         <ng-container *ngIf="theme == 'card'">
             <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1" *ngFor="let character of characters">
-                <app-card-chara></app-card-chara>
+                <app-card-chara [character]="character"></app-card-chara>
             </div>
 
         </ng-container>
@@ -19,7 +19,7 @@ Filter and tag options here
 
         <ng-container *ngIf="theme =='stats'">
             <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1" *ngFor="let character of characters">
-                <app-stats-chara></app-stats-chara>
+                <app-stats-chara [character]="character"></app-stats-chara>
             </div>
         </ng-container>
     </div>
