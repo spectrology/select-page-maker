@@ -1,0 +1,16 @@
+<h2>Filter Categories</h2>
+<button (click)="addCategory()" class="btn btn-primary" type="button">add new category</button>
+<ng-container *ngFor="let category of categories, let i = index">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">{{category.title}}</h4>
+            <div class="border form-control">
+                <h5><span *ngFor="let tag of category.tags, let id = index" class="badge rounded-pill bg-primary">{{tag}} 
+                    <i (click)="removeTag(i, id)">del</i>
+                </span>
+                </h5>
+                <input class="form-control" (change)="addTag(i, $event)" [(ngModel)]="newTag"/>
+            </div>
+        </div>
+    </div>
+</ng-container>

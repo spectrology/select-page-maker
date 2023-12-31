@@ -1,0 +1,4 @@
+<ng-container *ngFor="let theme of keys(themes)">
+    <input (change)="selectTheme(theme)" [checked]="theme == selectedTheme" type="radio" class="btn-check" name="options" id="{{theme}}" autocomplete="off">
+    <label class="btn btn-secondary" for="{{theme}}">{{theme}}</label>
+</ng-container>

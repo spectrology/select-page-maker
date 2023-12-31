@@ -1,0 +1,28 @@
+<!-- FILTER -->
+
+Filter and tag options here
+
+
+<!-- CHARACTERS -->
+
+
+<div class="container-fluid">
+    <div class="row">
+        <ng-container *ngIf="theme == 'card'">
+            <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1" *ngFor="let character of characters">
+                <app-card-chara></app-card-chara>
+            </div>
+
+        </ng-container>
+
+        <!-- TODO: use ng switch -->
+
+        <ng-container *ngIf="theme =='stats'">
+            <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1" *ngFor="let character of characters">
+                <app-stats-chara></app-stats-chara>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+!NOTE! Preview responsiveness will not be accurate within application. <a href="/">View as popout</a> for accurate responsive behavior.
