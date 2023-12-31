@@ -1,1 +1,27 @@
-<p>character works!</p>
+<!-- Character Info Display -->
+<ng-container *ngIf="character && !editMode">
+    <div class="row">
+        <div class="col col-12 col-md-8 col-lg-9">
+            <h4 class="card-title">{{character.basic.name}}</h4>
+            <p>{{character.basic.bio}}</p>
+        </div>
+        <div class="col col-12 col-md-4 col-lg-3">
+            <img src="{{character.basic.imgUrl}}" style="max-width: 100%" alt="">
+        </div>
+    </div>
+    <button (click)="setEditMode(true)" class="btn btn-primary" type="button">edit basic info</button>
+</ng-container>
+
+<!-- Character Info Editor -->
+<ng-container *ngIf="character && editMode">
+    <div class="row" [formGroup]="characterForm">
+        <div class="col col-12 col-md-8 col-lg-9">
+            <input formControlName="name" type="text" class="form-control card-title">
+            <textarea formControlName="bio" name="" id="" cols="30" rows="4" class="form-control card-body"></textarea>
+        </div>
+        <div class="col col-12 col-md-4 col-lg-3">
+            <input formControlName="imgUrl" type="text" class="form-control">
+        </div>
+    </div>
+    <button (click)="setEditMode(false)" class="btn btn-primary" type="button">save changes</button>
+</ng-container>

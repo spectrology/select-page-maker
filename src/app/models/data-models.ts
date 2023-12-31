@@ -4,17 +4,17 @@ interface BasicCharacterInfo {
   imgUrl: string
 }
 
-interface Tag {
+export interface Tag {
   category: string,
   tag: string
 }
 
-interface Character {
+export interface Character {
   basic: BasicCharacterInfo,
   tags: Tag[]
 }
 
-interface Category {
+export interface Category {
   title: string,
   tags: string[]
 }

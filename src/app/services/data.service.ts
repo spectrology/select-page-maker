@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Character, Category } from 'src/app/models/data-models'
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,13 @@ export class DataService {
   theme: string = "card"
   themeChange: Subject<string> = new Subject<string>();
 
-  characters: Character[] = [
-    {
-      basic: {
-        name: 'Firstname Lastname',
-        bio: 'Lorem ipsum dolor sit amet',
-        imgUrl: 'img.png'
-      }, tags: []
-    }
-  ]
+  characters: Character[] = [{
+    basic: {
+      name: 'Firstname Lastname',
+      bio: 'Lorem ipsum dolor sit amet',
+      imgUrl: 'https://64.media.tumblr.com/d460514536ca6dddca4012d7373b7140/41dc78ca1ecf1dbf-b1/s1280x1920/b970bb066e86d89a8883ee3cfb508eb56f8449aa.png'
+    }, tags: []
+  }]
 
   charactersUpdate: Subject<any> = new Subject<any>();
 
@@ -64,6 +63,13 @@ export class DataService {
 
   updateCharacters(characters: any) {
     this.charactersUpdate.next(characters);
+  }
+
+  updateCharacter(index: number, value: Character) {
+    let updatedCharacters: Character[] = [...this.characters]
+    updatedCharacters[index] = value
+    console.log(updatedCharacters)
+    this.updateCharacters(updatedCharacters)
   }
 
   addCharacter() {

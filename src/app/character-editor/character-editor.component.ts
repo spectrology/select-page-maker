@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Observable, OperatorFunction } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FormBuilder } from '@angular/forms';
+import { Category, Character, Tag } from '../models/data-models';
 
 @Component({
   selector: 'app-character-editor',
@@ -12,40 +12,26 @@ import { FormBuilder } from '@angular/forms';
 export class CharacterEditorComponent {
 
   constructor(
-    private dataService: DataService,
-    private formBuilder: FormBuilder
+    private dataService: DataService
   ){
-    this.dataService.charactersUpdate.subscribe((value: any) => {
+    this.dataService.charactersUpdate.subscribe((value: Character[]) => {
       this.characters = value
     })
-    this.dataService.categoriesUpdate.subscribe((value: any) => {
+    this.dataService.categoriesUpdate.subscribe((value: Category[]) => {
       this.allTags = this.dataService.allTags()
     })
   }
-
-  characterForm = this.formBuilder.group({
-    basic: this.formBuilder.group({
-      name: [''],
-      bio: [''],
-      imgUrl: ['']
-    }),
-    tags: this.formBuilder.array([
-      this.formBuilder.group({
-        tag: [''],
-        category: ['']
-      })
-    ])
-  })
 
   autofill: string = "";
 
   ngOnInit() {
     this.characters = this.dataService.characters
+    console.log(this.characters)
     this.allTags = this.dataService.allTags()
   }
 
-  characters: any[] = []
-  allTags: any[] = []
+  characters: Character[] = []
+  allTags: Tag[] = []
 
   addCharacter() {
     this.dataService.addCharacter()
@@ -53,6 +39,10 @@ export class CharacterEditorComponent {
 
   removeCharacter(index: number) {
     this.dataService.removeCharacter(index)
+  }
+
+  updateCharacter(character: Character, index: number) {
+    this.dataService.updateCharacter(index, character)
   }
 
   addTagToCharacter(characterIndex: number, tagEvent: any) {
@@ -67,7 +57,7 @@ export class CharacterEditorComponent {
     this.dataService.updateCharacters(this.characters)
   }
 
-  formatter = (tag: any) => tag.tag;
+  formatter = (tag: Tag) => tag.tag;
 
   search: OperatorFunction<string, readonly {tag: string, category: string}[]> = (text$: Observable<string>) =>
 		text$.pipe(
