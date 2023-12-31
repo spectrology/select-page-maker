@@ -7,6 +7,7 @@
 - Prevent duplicates
 - Category coloring / labelling (like when you add a tag have it say caste: Rust)
 - When adding new tag it shouldnt populate all bins
+- Make new categories renameable
 
 # Features
 - Filter
