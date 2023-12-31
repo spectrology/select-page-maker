@@ -1,1 +1,19 @@
-<p>category works!</p>
+<!-- DISPLAY CATEGORY NAME -->
+<ng-container *ngIf="!isEditMode">
+    <h4 class="card-title">{{category.title}}</h4>
+    <button class="btn btn-secondary" type="button" (click)="setEditMode(true)">Edit category name</button>
+</ng-container>
+
+<!-- EDIT CATEGORY NAME -->
+<ng-container *ngIf="isEditMode">
+    <input type="text" [(ngModel)]="newCategoryTitle" class="form-control card-title">
+    <button class="btn btn-secondary" type="button" (click)="saveChanges()">save category name</button>
+</ng-container>
+
+<div class="border form-control">
+    <h5><span *ngFor="let tag of category.tags, let id = index" class="badge rounded-pill bg-primary">{{tag}}
+            <i (click)="removeTag(id)">del</i>
+        </span>
+    </h5>
+    <input class="form-control" [(ngModel)]="newTag" (change)="addTag($event)" />
+</div>

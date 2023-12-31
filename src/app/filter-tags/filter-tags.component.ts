@@ -32,17 +32,10 @@ export class FilterTagsComponent {
     this.dataService.updateCategories(this.categories)
   }
 
-  removeTag(categoryIndex: number, tagIndex: number) {
-    this.categories[categoryIndex].tags.splice(tagIndex, 1)
+  categoryChanged(index: number, data: Category) {
+    // update single at index
+    // TODO: wait this is working? does the input bind it?
     this.dataService.updateCategories(this.categories)
-  }
-
-  newTag: string = ""
-
-  addTag(categoryIndex: number, newTagEvent: any) {
-    this.categories[categoryIndex].tags.push(newTagEvent.target.value)
-    this.dataService.updateCategories(this.categories)
-    this.newTag = ""
   }
 
   // TODO: tags should be unique
