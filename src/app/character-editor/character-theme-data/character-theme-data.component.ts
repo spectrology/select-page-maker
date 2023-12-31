@@ -21,7 +21,6 @@ export class CharacterThemeDataComponent {
   @Output() characterThemeDataChanged: EventEmitter<any> = new EventEmitter();
 
   ngOnInit() {
-    this.characterThemeData = this.dataService.allThemesData[this.dataService.theme].characterData
     this.formStructure = this.dataService.allThemesData[this.dataService.theme].characterData
   }
 
