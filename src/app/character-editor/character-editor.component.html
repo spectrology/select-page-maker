@@ -10,7 +10,7 @@
                 <div class="form-control">
                     add tags!
                     <span *ngFor="let tag of character.tags, let id = index"
-                        class="badge rounded-pill bg-primary">{{tag.tag}}
+                        class="badge rounded-pill bg-primary"><i>{{tag.category}}</i>: {{tag.tag}}
                         <i (click)="removeTagFromCharacter(i, id)">del</i>
                     </span>
                     <input (selectItem)="addTagToCharacter(i, $event)" type="text" class="form-control"
