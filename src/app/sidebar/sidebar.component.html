@@ -1,13 +1,16 @@
 <div class="container">
-    Upload data
+    Upload Data
+    <input style="display: none" type="file" (change)="onFileChanged($event)" #fileInput>
+    <button (click)="fileInput.click()">Select File</button>
     <h2>Theme</h2>
     <app-theme-select (themeChange)="setTheme($event)"></app-theme-select>
     <h3 class="pl-5">Options</h3>
-    {{theme}} options    
+    {{theme}} options
     <h2>Filter</h2>
     turn on or off
     <h2>Custom CSS</h2>
-    <p>This select maker uses bootstrap styling. You can overwrite bootstrap classes in order to style your select page.</p>
+    <p>This select maker uses bootstrap styling. You can overwrite bootstrap classes in order to style your select page.
+    </p>
     <h2>Download</h2>
     <button type="button" (click)="downloadCharaData()" class="btn btn-light">Download Character Data</button>
     download raw html for page input

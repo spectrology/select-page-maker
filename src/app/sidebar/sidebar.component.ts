@@ -44,4 +44,23 @@ export class SidebarComponent {
     document.body.removeChild(element);
   }
 
+  onFileChanged(event: any) {
+    let selectedFile = event.target.files[0];
+    const fileReader: any = new FileReader();
+    fileReader.readAsText(selectedFile, "UTF-8");
+    fileReader.onload = () => {
+     console.log(JSON.parse(fileReader.result));
+     let data = JSON.parse(fileReader.result)
+     this.dataService.updateCharacters(data.characters)
+     this.dataService.updateCategories(data.categories)
+    }
+    fileReader.onerror = (error: any) => {
+      console.log(error);
+    }
+
+    // TODO add warning if theres data present
+
+    
+  }
+
 }
