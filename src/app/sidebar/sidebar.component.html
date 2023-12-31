@@ -6,6 +6,7 @@
     <app-theme-select (themeChange)="setTheme($event)"></app-theme-select>
     <h3 class="pl-5">Options</h3>
     {{theme}} options
+    <app-form (formSaved)="saveChanges($event)" [formStructure]="themeOptions" [formInitialData]="themeOptions"></app-form>
     <h2>Filter</h2>
     turn on or off
     <h2>Custom CSS</h2>

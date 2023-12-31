@@ -19,8 +19,16 @@ export class SidebarComponent {
 
   ngOnInit() {
     this.theme = this.dataService.theme
+    this.themeOptions = this.dataService.allThemesData[this.dataService.theme].options
   }
 
+  saveChanges(event: any) {
+    console.log(event)
+    this.themeOptions = event
+    this.dataService.setThemeOptions(event, this.theme)
+  }
+
+  themeOptions: any;
   theme: string;
 
   setTheme(theme: any) { // TODO: typeset

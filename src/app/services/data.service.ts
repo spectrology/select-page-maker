@@ -12,9 +12,9 @@ export class DataService {
 
   characters: Character[] = [{
     basic: {
-      name: 'Firstname Lastname',
-      bio: 'Lorem ipsum dolor sit amet',
-      imgUrl: 'https://64.media.tumblr.com/d460514536ca6dddca4012d7373b7140/41dc78ca1ecf1dbf-b1/s1280x1920/b970bb066e86d89a8883ee3cfb508eb56f8449aa.png'
+      name: 'Firsty Lastes',
+      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quam orci, malesuada nec velit cursus, aliquam blandit diam. Sed rutrum tellus erat, eu suscipit tellus aliquet quis.',
+      imgUrl: 'https://64.media.tumblr.com/ec1319e2774236e79f69649f7d95ecb3/7fe09b0c24a6e82b-c6/s400x600/c343b64ebe88c41dde840cfb9c14e2e528b53b3e.pnj'
     }, tags: [], themeData: {}
   }]
 
@@ -64,6 +64,10 @@ export class DataService {
 
   setTheme(theme: string) {
     this.themeChange.next(theme);
+  }
+
+  setThemeOptions(themeOptions: any, theme: string) {
+    this.allThemesData[theme].options = themeOptions
   }
 
   // CHARACTERS

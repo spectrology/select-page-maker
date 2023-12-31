@@ -25,9 +25,9 @@ export class CardTheme {
 }
 
 class ThreeIcons {
-    info1icon: string = "fa-avatar";
-    info2icon: string = "fa-avatar";
-    info3icon: string = "fa-avatar"
+    info1icon: string = "user";
+    info2icon: string = "user";
+    info3icon: string = "user"
 }
 
 export class CardThemeOptions {

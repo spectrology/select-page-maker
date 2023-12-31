@@ -15,12 +15,16 @@
         <div class="row">
             <div class="col col-3 text-right">
                 <div class="row">
+                    {{themeOptions.info1icon}}
+                    <fa-icon [icon]="icons[themeOptions.info.info1icon]"></fa-icon>
                     {{character.themeData.card.info.info1}}
                 </div>
                 <div class="row">
+                    <fa-icon [icon]="icons[themeOptions.info.info2icon]"></fa-icon>
                     {{character.themeData.card.info.info2}}
                 </div>
                 <div class="row">
+                    <fa-icon [icon]="icons[themeOptions.info.info3icon]"></fa-icon>
                     {{character.themeData.card.info.info3}}
                 </div>
             </div>
