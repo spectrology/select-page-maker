@@ -14,7 +14,7 @@ export class DataService {
       name: 'Firstname Lastname',
       bio: 'Lorem ipsum dolor sit amet',
       imgUrl: 'https://64.media.tumblr.com/d460514536ca6dddca4012d7373b7140/41dc78ca1ecf1dbf-b1/s1280x1920/b970bb066e86d89a8883ee3cfb508eb56f8449aa.png'
-    }, tags: []
+    }, tags: [], themeData: {}
   }]
 
   charactersUpdate: Subject<any> = new Subject<any>();
@@ -62,6 +62,7 @@ export class DataService {
   // CHARACTERS
 
   updateCharacters(characters: any) {
+    this.characters = characters
     this.charactersUpdate.next(characters);
   }
 
@@ -78,7 +79,7 @@ export class DataService {
         name: 'Firstname Lastname',
         bio: 'Lorem ipsum dolor sit amet',
         imgUrl: 'img.png'
-      }, tags: []
+      }, tags: [], themeData: {}
     })
     this.charactersUpdate.next(this.characters);
   }

@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'select-page-maker';
 
   show: any = {
-    preview: true,
-    characters: false,
+    preview: false,
+    characters: true,
     categories: false
   }
 

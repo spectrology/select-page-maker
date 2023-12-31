@@ -6,7 +6,7 @@
             </div>
             <div class="col col-9">
                 <h5 class="card-title">{{character.basic.name}}</h5>
-                <h6>stat 1 - stat 2 - stat 3</h6>
+                <h6>{{character.themeData.card.descriptors.desc1}} - {{character.themeData.card.descriptors.desc2}} - {{character.themeData.card.descriptors.desc3}}</h6>
             </div>
         </div>
     </div>
@@ -14,9 +14,9 @@
     <div class="card-body">
         <div class="row">
             <div class="col col-3 text-right">
-                info1
-                info2
-                info3
+                {{character.themeData.card.info.info1}}
+                {{character.themeData.card.info.info2}}
+                {{character.themeData.card.info.info3}}
             </div>
             <div class="col col-9">
                 <p class="card-text">{{character.basic.bio}}</p>

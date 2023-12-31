@@ -15,10 +15,14 @@ export class CharacterEditorComponent {
     private dataService: DataService
   ){
     this.dataService.charactersUpdate.subscribe((value: Character[]) => {
+      console.log("updated characters!", value)
       this.characters = value
     })
     this.dataService.categoriesUpdate.subscribe((value: Category[]) => {
       this.allTags = this.dataService.allTags()
+    })
+    this.dataService.themeChange.subscribe((value: string) => {
+      this.theme = this.dataService.theme
     })
   }
 
@@ -32,6 +36,7 @@ export class CharacterEditorComponent {
 
   characters: Character[] = []
   allTags: Tag[] = []
+  theme: string = this.dataService.theme
 
   addCharacter() {
     this.dataService.addCharacter()
@@ -39,6 +44,15 @@ export class CharacterEditorComponent {
 
   removeCharacter(index: number) {
     this.dataService.removeCharacter(index)
+  }
+
+  setCharacterThemeData(data: any, index: number) {
+    let updatedCharacter = this.characters[index]
+    console.log(updatedCharacter)
+    if (!updatedCharacter.themeData) updatedCharacter.themeData = {[this.theme]: data.data}
+    updatedCharacter.themeData[this.theme] = data.data
+    
+    this.updateCharacter(updatedCharacter, index)
   }
 
   updateCharacter(character: Character, index: number) {

@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Character } from 'src/app/models/data-models';
+import { FormService } from 'src/app/services/form.service';
 
 @Component({
   selector: 'app-character',
@@ -9,30 +10,28 @@ import { Character } from 'src/app/models/data-models';
 })
 export class CharacterComponent {
 
-  @Input({ required: true }) character!: Character;
-  @Output() characterChanged: EventEmitter<any> = new EventEmitter();
+  constructor(private formsService: FormService) {}
 
-  constructor(private formBuilder: FormBuilder) {
-  }
+  @Input() character!: Character;
+  @Output() characterChanged: EventEmitter<any> = new EventEmitter();
 
   editMode: boolean = false;
   setEditMode(mode: boolean) {
-    if (!mode && this.characterForm.valid) {
-      this.characterChanged.emit({
-        ...this.character,
-        basic: this.characterForm.value
-      })
-    }
     this.editMode = mode
-    if (this.editMode) {
-      this.characterForm.setValue(this.character.basic)
-    }
   }
 
-  characterForm = this.formBuilder.group({
-    name: ['', Validators.required],
-    bio: ['', Validators.required],
-    imgUrl: ['', Validators.required]
-  })
+  saveChanges(data: any) {
+    this.characterChanged.emit({
+      ...this.character,
+      basic: this.characterForm.value
+    })
+    this.setEditMode(false)
+  }
+
+  characterForm: FormGroup = new FormGroup({});
+
+  ngOnInit() {
+    this.characterForm = this.formsService.formGenerator(this.character.basic, this.character.basic)
+  }
 
 }

@@ -5,8 +5,11 @@
     <ng-container *ngFor="let character of characters, let i = index">
         <div class="card">
             <div class="card-body">
-                <app-character [character]="character" (characterChanged)="updateCharacter($event, i)"></app-character>
-                <button (click)="removeCharacter(i)" class="btn btn-primary" type="button">remove</button>
+
+                <!-- BASIC CHARACTER DATA EDITOR -->
+                <app-character (characterChanged)="updateCharacter($event, i)" [character]="character" ></app-character>
+
+                <!-- CHARACTER TAG EDITOR -->
                 <div class="form-control">
                     add tags!
                     <span *ngFor="let tag of character.tags, let id = index"
@@ -17,6 +20,18 @@
                         [(ngModel)]="autofill" [ngbTypeahead]="search" [inputFormatter]="formatter"
                         [resultFormatter]="formatter" [editable]="false" />
                 </div>
+
+                <!-- THEME SPECIFIC DATA EDITOR -->
+                <h5>Theme Data</h5>
+                {{character.themeData[theme] | json }}
+                <small class="text-muted"><i>Just because some data isn't on display here doesn't mean it's gone! Only data applicable to the current selected theme is displayed.</i></small>
+                <app-character-theme-data (characterThemeDataChanged)="setCharacterThemeData($event, i)" [theme]="theme" [characterThemeData]="character.themeData[theme]"></app-character-theme-data>
+
+                <!-- USE NG TEMPLATES AND FORM CONTROL GENERATORS -->
+
+
+                <!-- BUTTONS -->
+                <button (click)="removeCharacter(i)" class="btn btn-primary" type="button">remove</button>
             </div>
         </div>
     </ng-container>

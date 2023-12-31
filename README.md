@@ -1,7 +1,7 @@
 ## TODO LIST
 
 # Character editor
-- Basic info editing
+- Have theme data form change when slected theme changes
 
 # Catagories
 - Prevent duplicates

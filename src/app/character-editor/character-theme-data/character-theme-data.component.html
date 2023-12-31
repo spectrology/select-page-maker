@@ -1,0 +1,47 @@
+<!-- STATIC DISPLAY -->
+<ng-container *ngIf="!editMode">
+    {{themeForm.value | json}}
+    <button type="button" (click)="setEditMode(true)" class="btn btn-primary">Edit Theme specific data</button>
+</ng-container>
+
+<!-- FORM DISPLAY -->
+<ng-container *ngIf="editMode">
+    <form (ngSubmit)="saveChanges($event)">
+        <ng-container [formGroup]="themeForm">
+            <div class="row">
+                <div class="col col-12">
+                    <ng-container
+                        *ngTemplateOutlet="object; context: {data: themeForm.value, form: themeForm, attr: 'Theme Options'}"></ng-container>
+                </div>
+            </div>
+
+            <!-- OBJECT PARENT TEMPLATE -->
+            <ng-template #object let-value="data" let-title="attr" let-form="form">
+                <h5>{{title}}</h5>
+                <ng-container *ngFor="let attr of keys(value)">
+                    <ng-container *ngTemplateOutlet="typeof(value[attr]) === 'object' ? object : input; context: 
+                        {
+                            data: value[attr], 
+                            attr: attr, 
+                            form: typeof(value[attr]) === 'object' ? form.controls[attr] : form
+                        }"></ng-container>
+                </ng-container>
+            </ng-template>
+
+            <!-- INPUT FIELD -->
+            <ng-template #input let-value="data" let-attr="attr" let-form="form">
+                <ng-container [formGroup]="form">
+                    <div class="row">
+                        <div class="col col-12 col-md-6">
+                            {{attr}}:
+                        </div>
+                        <div class="col col-12 col-md-6">
+                            <input [formControlName]="attr" type="text" class="form-control">
+                        </div>
+                    </div>
+                </ng-container>
+            </ng-template>
+            <button type="submit" class="btn btn-primary">save changes</button>
+        </ng-container>
+    </form>
+</ng-container>

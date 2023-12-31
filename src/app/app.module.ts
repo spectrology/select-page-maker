@@ -15,6 +15,7 @@ import { FilterTagsComponent } from './filter-tags/filter-tags.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { CategoryComponent } from './filter-tags/category/category.component';
+import { CharacterThemeDataComponent } from './character-editor/character-theme-data/character-theme-data.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CategoryComponent } from './filter-tags/category/category.component';
     StatsCharaComponent,
     ThemeSelectComponent,
     FilterTagsComponent,
-    CategoryComponent],
+    CategoryComponent,
+    CharacterThemeDataComponent],
   imports: [
     BrowserModule,
     NgbModule,

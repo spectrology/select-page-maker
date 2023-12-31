@@ -11,7 +11,8 @@ export interface Tag {
 
 export interface Character {
   basic: BasicCharacterInfo,
-  tags: Tag[]
+  tags: Tag[],
+  themeData: any,
 }
 
 export interface Category {
