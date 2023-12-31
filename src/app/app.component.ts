@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import packageJson from '../../package.json';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'select-page-maker';
+  public version: string = packageJson.version;
 
   show: any = {
     preview: false,

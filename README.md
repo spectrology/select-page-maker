@@ -1,4 +1,4 @@
-## TODO LIST FOR CORE FUNCTIONALITY
+## TODO LIST FOR RELEASE
 
 # Character editor
 
@@ -14,15 +14,18 @@
 # Features
 - Filter
 - Dark/light view
+- Helptext (for icons etc)
+- Alert system
 
 # Themes
-- Theme option forms
+- Add icons
 
 # Preview
-- Refresh on data update
 
 ## COMPLETED
 - Edit character basic info
+- Refresh on data update
+- Theme option forms
 - Edit character theme specific info
 - Create filter tag categories
 - Add additional tags to preset categories
