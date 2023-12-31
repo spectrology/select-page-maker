@@ -1,27 +1,35 @@
-import {Link} from "src/app/models/theme-block-models"
+import { Link } from "src/app/models/theme-block-models"
 
-export interface CardTheme {
-    descriptors: {
-        desc1: string,
-        desc2: string,
-        desc3: string
-    },
-    info: {
-        info1: string,
-        info2: string,
-        info3: string
-    }
+class Descriptors {
+    desc1: string = "";
+    desc2: string = "";
+    desc3: string = ""
 }
 
-export interface CardThemeOptions { 
-    info: {
-        info1icon: string,
-        info2icon: string,
-        info3icon: string,
-    }
-    links: {
-        link1: Link,
-        link2: Link,
-        link3: Link
-    }
+class Info {
+    info1: string = "";
+    info2: string = "";
+    info3: string = "";
+}
+
+class ThreeLinks {
+    link1: Link = new Link();
+    link2: Link = new Link();
+    link3: Link = new Link()
+}
+
+export class CardTheme {
+    descriptors: Descriptors = new Descriptors();
+    info: Info = new Info();
+    links: ThreeLinks = new ThreeLinks();
+}
+
+class ThreeIcons {
+    info1icon: string = "fa-avatar";
+    info2icon: string = "fa-avatar";
+    info3icon: string = "fa-avatar"
+}
+
+export class CardThemeOptions {
+    info: ThreeIcons = new ThreeIcons()
 }

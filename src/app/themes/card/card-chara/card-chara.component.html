@@ -14,21 +14,27 @@
     <div class="card-body">
         <div class="row">
             <div class="col col-3 text-right">
-                {{character.themeData.card.info.info1}}
-                {{character.themeData.card.info.info2}}
-                {{character.themeData.card.info.info3}}
+                <div class="row">
+                    {{character.themeData.card.info.info1}}
+                </div>
+                <div class="row">
+                    {{character.themeData.card.info.info2}}
+                </div>
+                <div class="row">
+                    {{character.themeData.card.info.info3}}
+                </div>
             </div>
             <div class="col col-9">
                 <p class="card-text">{{character.basic.bio}}</p>
                 <div class="row">
                     <div class="col col-4">
-                        link2
+                        <h4><a href="{{character.themeData.card.links.link1.url}}">{{character.themeData.card.links.link1.display}}</a></h4>
                     </div>
                     <div class="col col-4">
-                        link3
+                        <h4><a href="{{character.themeData.card.links.link2.url}}">{{character.themeData.card.links.link2.display}}</a></h4>
                     </div>
                     <div class="col col-4">
-                        link4
+                        <h4><a href="{{character.themeData.card.links.link3.url}}">{{character.themeData.card.links.link3.display}}</a></h4>
                     </div>
                 </div>
             </div>

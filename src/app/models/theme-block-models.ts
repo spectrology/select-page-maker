@@ -1,5 +1,4 @@
-export interface Link {
-    display: string,
-    url: string,
-    fields?: string[]
+export class Link {
+    display: string = "link display";
+    url: string = "/tagged/post"
 }

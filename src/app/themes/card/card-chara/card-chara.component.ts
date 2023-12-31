@@ -9,4 +9,7 @@ import { Character } from 'src/app/models/data-models';
 export class CardCharaComponent {
   @Input() character!: Character;
 
+  ngOnInit() {
+    console.log(this.character)
+  }
 }

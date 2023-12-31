@@ -1,0 +1,39 @@
+<!-- FORM DISPLAY -->
+<form (ngSubmit)="saveChanges($event)">
+    <ng-container [formGroup]="genForm">
+        <div class="row">
+            <div class="col col-12">
+                <ng-container
+                    *ngTemplateOutlet="object; context: {data: genForm.value, form: genForm, attr: formTitle}"></ng-container>
+            </div>
+        </div>
+
+        <!-- OBJECT PARENT TEMPLATE -->
+        <ng-template #object let-value="data" let-title="attr" let-form="form">
+            <h5>{{title}}</h5>
+            <ng-container *ngFor="let attr of keys(value)">
+                <ng-container *ngTemplateOutlet="typeof(value[attr]) === 'object' ? object : input; context: 
+                        {
+                            data: value[attr], 
+                            attr: attr, 
+                            form: typeof(value[attr]) === 'object' ? form.controls[attr] : form
+                        }"></ng-container>
+            </ng-container>
+        </ng-template>
+
+        <!-- INPUT FIELD -->
+        <ng-template #input let-value="data" let-attr="attr" let-form="form">
+            <ng-container [formGroup]="form">
+                <div class="row">
+                    <div class="col col-12 col-md-6">
+                        {{attr}}:
+                    </div>
+                    <div class="col col-12 col-md-6">
+                        <input [formControlName]="attr" type="text" class="form-control">
+                    </div>
+                </div>
+            </ng-container>
+        </ng-template>
+        <button type="submit" class="btn btn-primary">save changes</button>
+    </ng-container>
+</form>

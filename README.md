@@ -1,7 +1,6 @@
-## TODO LIST
+## TODO LIST FOR CORE FUNCTIONALITY
 
 # Character editor
-- Have theme data form change when slected theme changes
 
 # Catagories
 - Prevent duplicates
@@ -17,7 +16,10 @@
 - Dark/light view
 
 # Themes
-- Link patterns
+- Theme option forms
+
+# Preview
+- Refresh on data update
 
 ## COMPLETED
 - Edit character basic info
@@ -29,3 +31,4 @@
 - Edit character tags
 - Make new categories renameable
 - When adding new tag it shouldnt populate all bins
+- Have theme data form change when slected theme changesD

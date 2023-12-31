@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Character, Category } from 'src/app/models/data-models'
+import { CardTheme, CardThemeOptions } from '../themes/card/card-chara/card-model';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,12 @@ export class DataService {
   }
 
   // THEME
+  allThemesData: any = {
+    card: {
+      characterData: new CardTheme(),
+      options: new CardThemeOptions()
+    }
+  }
 
   setTheme(theme: string) {
     this.themeChange.next(theme);

@@ -23,7 +23,6 @@
 
                 <!-- THEME SPECIFIC DATA EDITOR -->
                 <h5>Theme Data</h5>
-                {{character.themeData[theme] | json }}
                 <small class="text-muted"><i>Just because some data isn't on display here doesn't mean it's gone! Only data applicable to the current selected theme is displayed.</i></small>
                 <app-character-theme-data (characterThemeDataChanged)="setCharacterThemeData($event, i)" [theme]="theme" [characterThemeData]="character.themeData[theme]"></app-character-theme-data>
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { FormService } from '../services/form.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,7 +12,7 @@ export class SidebarComponent {
 
   constructor(
     private dataService: DataService,
-    private sanitizer: DomSanitizer
+    private formsService: FormService
   ) {
     this.theme = this.dataService.theme
   }
