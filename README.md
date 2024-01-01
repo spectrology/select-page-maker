@@ -2,6 +2,7 @@
 
 # Character editor
 - Character sort feature?
+- disable links if theres no url
 
 # Categories
 - warn user about removing categories
@@ -19,6 +20,7 @@
 
 # Bugs
 - Preview needs to be toggled before it works
+- One filter should be open by default or they should be collapseable
 
 ## COMPLETED
 - editing category title should update it everywhere (like in character data)
