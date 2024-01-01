@@ -55,6 +55,186 @@ export class DataService {
           }
         }
       }
+    },
+    {
+      "basic": {
+        "name": "Firstname Lastname",
+        "bio": "Lorem ipsum dolor sit amet",
+        "imgUrl": "img.png"
+      },
+      "tags": [],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "",
+            "desc2": "",
+            "desc3": ""
+          },
+          "info": {
+            "info1": "",
+            "info2": "",
+            "info3": ""
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
+      }
+    },
+    {
+      "basic": {
+        "name": "Firstname Lastname",
+        "bio": "Lorem ipsum dolor sit amet",
+        "imgUrl": "img.png"
+      },
+      "tags": [],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "",
+            "desc2": "",
+            "desc3": ""
+          },
+          "info": {
+            "info1": "",
+            "info2": "",
+            "info3": ""
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
+      }
+    },
+    {
+      "basic": {
+        "name": "Firstname Lastname",
+        "bio": "Lorem ipsum dolor sit amet",
+        "imgUrl": "img.png"
+      },
+      "tags": [],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "",
+            "desc2": "",
+            "desc3": ""
+          },
+          "info": {
+            "info1": "",
+            "info2": "",
+            "info3": ""
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
+      }
+    },
+    {
+      "basic": {
+        "name": "Firstname Lastname",
+        "bio": "Lorem ipsum dolor sit amet",
+        "imgUrl": "img.png"
+      },
+      "tags": [],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "",
+            "desc2": "",
+            "desc3": ""
+          },
+          "info": {
+            "info1": "",
+            "info2": "",
+            "info3": ""
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
+      }
+    },
+    {
+      "basic": {
+        "name": "Firstname Lastname",
+        "bio": "Lorem ipsum dolor sit amet",
+        "imgUrl": "img.png"
+      },
+      "tags": [],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "",
+            "desc2": "",
+            "desc3": ""
+          },
+          "info": {
+            "info1": "",
+            "info2": "",
+            "info3": ""
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
+      }
     }]
 
   charactersUpdate: Subject<any> = new Subject<any>();
