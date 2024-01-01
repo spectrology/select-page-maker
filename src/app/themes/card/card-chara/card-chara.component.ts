@@ -41,6 +41,10 @@ export class CardCharaComponent {
 
   themeOptions: any = this.dataService.allThemesData[this.dataService.theme].options;
 
+  getTagsAsArray(character: Character) {
+    return character.tags.map(tag => { return tag.tag })
+  }
+
   ngOnInit() {
     if (!this.character.themeData[this.dataService.theme]) {
       this.character.themeData[this.dataService.theme] = this.dataService.allThemesData[this.dataService.theme].characterData

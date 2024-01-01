@@ -17,6 +17,9 @@
 
 # Preview
 
+# Bugs
+- Preview needs to be toggled before it works
+
 ## COMPLETED
 - editing category title should update it everywhere (like in character data)
 - remove nonapplicable tags if categories are edited

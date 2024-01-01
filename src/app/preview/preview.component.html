@@ -29,7 +29,7 @@
     <div class="row flex-fill fill d-flex">
         <div class="col col-2 bg-light" style="max-height: 100vh">
             <div class="row">
-                Filters
+                <h2>Filters</h2>
                 <div class="col option-set" *ngFor="let category of categories"
                     [attr.data-filter-group]="category.title">
                     {{category.title | titlecase}}
@@ -43,12 +43,9 @@
         <div class="col" style="height: 100vh; overflow: auto">
             <div class="row filter-container ">
                 <ng-container *ngIf="theme == 'card'">
-                    <div *ngFor="let character of characters"
-                        class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item"
-                        [ngClass]="getTagsAsArray(character)">
+                    <ng-container *ngFor="let character of characters">
                         <app-card-chara [character]="character"></app-card-chara>
-                    </div>
-
+                    </ng-container>
                 </ng-container>
 
                 <!-- TODO: use ng switch -->

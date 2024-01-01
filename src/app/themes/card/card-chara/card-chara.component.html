@@ -1,47 +1,87 @@
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col col-3">
-                <img src="{{character.basic.imgUrl}}" style="max-width: 100%">
-            </div>
-            <div class="col col-9">
-                <h5 class="card-title">{{character.basic.name}}</h5>
-                <h6>{{character.themeData.card.descriptors.desc1}} - {{character.themeData.card.descriptors.desc2}} - {{character.themeData.card.descriptors.desc3}}</h6>
+<div class="col col-12 col-sm-10 col-md-8 offset-sm-1 offset-md-2 offset-lg-0 col-lg-6 col-xl-4 p-1 filter-item" [ngClass]="getTagsAsArray(character)">
+    <div class="card">
+        <div class="card-body">
+            <div class="row ">
+                <div class="col col-12 col-sm-5 text-right d-none d-sm-block">
+                    <div style="
+                    background-size: cover;
+                    width: 85%; 
+                    margin-left: 15%;
+                    position: relative;
+                    z-index: 3;
+                    padding-bottom: 85%;  
+                    background-image: url({{character.basic.imgUrl}}); 
+                    background-position: center" class="bg-primary rounded">
+                    </div>
+                    <div class="row small text-right pt-2">
+                        <span class="mb-1">
+                            <fa-icon class="text-muted"
+                                [icon]="icons[themeOptions.info.info1icon] || icons.unknown"></fa-icon>
+                            {{character.themeData.card.info.info1}}
+                        </span>
+                        <br>
+                        <span class="mb-1">
+                            <fa-icon class="text-muted"
+                                [icon]="icons[themeOptions.info.info2icon] || icons.unknown"></fa-icon>
+                            {{character.themeData.card.info.info2}}
+                        </span>
+                        <br>
+                        <span class="mb-1">
+                            <fa-icon class="text-muted"
+                                [icon]="icons[themeOptions.info.info3icon] || icons.unknown"></fa-icon>
+                            {{character.themeData.card.info.info3}}
+                        </span>
+                    </div>
+                </div>
+                <div class="col col-12 col-sm-7">
+
+                    <div class="row">
+                        <div class="col-3 d-block d-sm-none pr-0">
+                            <div style="
+                            background-size: cover;
+                            width: 100%; 
+                            position: relative;
+                            z-index: 3;
+                            padding-bottom: 100%;  
+                            background-image: url({{character.basic.imgUrl}}); 
+                            background-position: center" class="bg-primary rounded">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h4 class="card-title mt-2">{{character.basic.name}}</h4>
+                            <h6>
+                                {{character.themeData.card.descriptors.desc1}}
+                                &bull;
+                                {{character.themeData.card.descriptors.desc2}}
+                                &bull;
+                                {{character.themeData.card.descriptors.desc3}}
+                            </h6>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary my-3"
+                        style="z-index: 1; position: relative; width: 220%; left: -100%; right: 0">
+
+                    <p class="card-text">{{character.basic.bio}}</p>
+                </div>
+                <div class="col col-10 col-md-7 offset-1 offset-md-5 mt-2">
+                    <div class="row">
+                        <div class="col col-4 p-0 text-center">
+                            <a class="text-primary fw-bold small"
+                                href="{{character.themeData.card.links.link1.url}}">{{character.themeData.card.links.link1.display}}</a>
+                        </div>
+                        <div class="col col-4 p-0 text-center">
+                            <a class="text-primary fw-bold small"
+                                href="{{character.themeData.card.links.link2.url}}">{{character.themeData.card.links.link2.display}}</a>
+                        </div>
+                        <div class="col col-4 p-0 text-center">
+                            <a class="text-primary fw-bold small"
+                                href="{{character.themeData.card.links.link3.url}}">{{character.themeData.card.links.link3.display}}</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <hr class="m-0">
-    <div class="card-body">
-        <div class="row">
-            <div class="col col-3 text-right">
-                <div class="row">
-                    {{themeOptions.info1icon}}
-                    <fa-icon [icon]="icons[themeOptions.info.info1icon] || icons.unknown"></fa-icon>
-                    {{character.themeData.card.info.info1}}
-                </div>
-                <div class="row">
-                    <fa-icon [icon]="icons[themeOptions.info.info2icon] || icons.unknown"></fa-icon>
-                    {{character.themeData.card.info.info2}}
-                </div>
-                <div class="row">
-                    <fa-icon [icon]="icons[themeOptions.info.info3icon] || icons.unknown"></fa-icon>
-                    {{character.themeData.card.info.info3}}
-                </div>
-            </div>
-            <div class="col col-9">
-                <p class="card-text">{{character.basic.bio}}</p>
-                <div class="row">
-                    <div class="col col-4">
-                        <h4><a href="{{character.themeData.card.links.link1.url}}">{{character.themeData.card.links.link1.display}}</a></h4>
-                    </div>
-                    <div class="col col-4">
-                        <h4><a href="{{character.themeData.card.links.link2.url}}">{{character.themeData.card.links.link2.display}}</a></h4>
-                    </div>
-                    <div class="col col-4">
-                        <h4><a href="{{character.themeData.card.links.link3.url}}">{{character.themeData.card.links.link3.display}}</a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>

@@ -10,18 +10,52 @@ export class DataService {
   theme: string = "card"
   themeChange: Subject<string> = new Subject<string>();
 
-  characters: Character[] = [{
-    basic: {
-      name: 'Firsty Lastes',
-      bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quam orci, malesuada nec velit cursus, aliquam blandit diam. Sed rutrum tellus erat, eu suscipit tellus aliquet quis.',
-      imgUrl: 'https://64.media.tumblr.com/ec1319e2774236e79f69649f7d95ecb3/7fe09b0c24a6e82b-c6/s400x600/c343b64ebe88c41dde840cfb9c14e2e528b53b3e.pnj'
-    }, tags: [
-      {
-        category: 'caste',
-        tag: 'purple'
+  characters: Character[] = [
+    {
+      "basic": {
+        "name": "Aelium Lycaon",
+        "bio": "Hes my boyfriend. He belongs to chase sasster, but he is my boyfriend. He is a goodboy doctor and he died recently but hes ok.",
+        "imgUrl": "https://64.media.tumblr.com/3d980c0d770fb3be3bda06180d6624b5/90cc86fd50249726-a2/s250x400/4f17626fd630f0196091bce91d302c1d54e360b4.pnj"
+      },
+      "tags": [
+        {
+          "category": "caste",
+          "tag": "purple"
+        },
+        {
+          "tag": "alternia",
+          "category": "location"
+        }
+      ],
+      "themeData": {
+        "card": {
+          "descriptors": {
+            "desc1": "hobby",
+            "desc2": "habit",
+            "desc3": "occupation"
+          },
+          "info": {
+            "info1": "Purple",
+            "info2": "14 Sweeps",
+            "info3": "He/him"
+          },
+          "links": {
+            "link1": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link2": {
+              "display": "link display",
+              "url": "/tagged/post"
+            },
+            "link3": {
+              "display": "link display",
+              "url": "/tagged/post"
+            }
+          }
+        }
       }
-    ], themeData: {}
-  }]
+    }]
 
   charactersUpdate: Subject<any> = new Subject<any>();
 

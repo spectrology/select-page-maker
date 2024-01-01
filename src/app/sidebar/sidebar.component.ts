@@ -17,6 +17,9 @@ export class SidebarComponent {
     this.theme = this.dataService.theme
   }
 
+  // Filter settings
+  enableFilters: boolean = true;
+
   ngOnInit() {
     this.theme = this.dataService.theme
     this.themeOptions = this.dataService.allThemesData[this.dataService.theme].options
@@ -40,7 +43,8 @@ export class SidebarComponent {
   downloadCharaData() {
     let assembledData = {
       characters: this.dataService.characters,
-      categories: this.dataService.categories
+      categories: this.dataService.categories,
+      theme: this.dataService.theme
     }
 
     var sJson = JSON.stringify(assembledData);

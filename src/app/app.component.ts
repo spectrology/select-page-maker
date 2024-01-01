@@ -21,7 +21,7 @@ export class AppComponent {
     categories: false
   }
 
-  displayMenus: boolean = true;
+  displayMenus: boolean = false;
 
   toggleMenus() {
     this.displayMenus = !this.displayMenus

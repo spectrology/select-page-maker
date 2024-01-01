@@ -6,9 +6,16 @@
     <app-theme-select (themeChange)="setTheme($event)"></app-theme-select>
     <h3 class="pl-5">Options</h3>
     {{theme}} options
-    <app-form (formSaved)="saveChanges($event)" [formStructure]="themeOptions" [formInitialData]="themeOptions"></app-form>
+    <app-form (formSaved)="saveChanges($event)" [formStructure]="themeOptions"
+        [formInitialData]="themeOptions"></app-form>
+
+    <!-- Filter Options -->
     <h2>Filter</h2>
-    Feature coming soon!
+    Enable Filter
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <input type="checkbox" [value]="enableFilters" data-toggle="toggle">
+    </div>
+
     <h2>Custom CSS</h2>
     <p>This select maker uses bootstrap styling. You can overwrite bootstrap classes in order to style your select page.
     </p>
