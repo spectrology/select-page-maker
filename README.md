@@ -2,13 +2,9 @@
 
 # Character editor
 
-# Catagories
-- Prevent duplicates
-- only allow editing one category title at once?
+# Categories
 - remove nonapplicable tags if categories are edited
 - warn user about this
-- allow deleting categories
-- dont allow categories with same name
 - editing category title should update it everywhere (like in character data)
 
 # Features
@@ -23,6 +19,9 @@
 # Preview
 
 ## COMPLETED
+- dont allow categories with same name
+- allow deleting categories
+- Prevent duplicates
 - Edit character basic info
 - Refresh on data update
 - Theme option forms

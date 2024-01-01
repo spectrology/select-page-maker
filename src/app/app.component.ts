@@ -12,8 +12,8 @@ export class AppComponent {
 
   show: any = {
     preview: false,
-    characters: true,
-    categories: false
+    characters: false,
+    categories: true
   }
 
   keys(obj: any) {

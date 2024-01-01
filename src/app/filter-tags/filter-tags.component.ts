@@ -32,10 +32,29 @@ export class FilterTagsComponent {
     this.dataService.updateCategories(this.categories)
   }
 
+  removeCategory(categoryIndex: number) {
+    this.dataService.removeCategory(categoryIndex)
+  }
+
   categoryChanged(index: number, data: Category) {
     // update single at index
     // TODO: wait this is working? does the input bind it?
     this.dataService.updateCategories(this.categories)
+  }
+
+  changeCategoryTitle(index: number, newTitle: string) {
+    if (!this.categories.map((cat, i) => {
+      if (i !== index) {
+        return cat.title
+      } else {
+        return null
+      }
+    }).includes(newTitle)) {
+      this.categories[index].title = newTitle
+      this.dataService.handleCategoryNameChange(index, this.categories)
+    } else {
+      console.log(`alert: a category with the title ${newTitle} already exists.`)
+    }
   }
 
   // TODO: tags should be unique

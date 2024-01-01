@@ -10,6 +10,7 @@ export class CategoryComponent {
 
   @Input({required: true}) category!: Category;
   @Output() categoryChanged: EventEmitter<any> = new EventEmitter();
+  @Output() changeCategoryTitle: EventEmitter<any> = new EventEmitter();
 
   removeTag(tagIndex: number) {
     this.category.tags.splice(tagIndex, 1)
@@ -20,9 +21,15 @@ export class CategoryComponent {
   newCategoryTitle: string = ""
 
   addTag(newTagEvent: any) {
-    this.category.tags.push(newTagEvent.target.value)
-    this.categoryChanged.emit(this.category)
-    this.newTag = ""
+    // Prevent duplicates
+    if (!this.category.tags.includes(newTagEvent.target.value)) {
+      this.category.tags.push(newTagEvent.target.value)
+      this.categoryChanged.emit(this.category)
+      this.newTag = ""
+    } else {
+      console.log("Tag exists in this category already")
+    }
+    
   }
 
   isEditMode: boolean = false;
@@ -31,9 +38,8 @@ export class CategoryComponent {
   }
 
   saveChanges() {
-    this.category.title = this.newCategoryTitle
-    this.categoryChanged.emit(this.category)
-    this.newCategoryTitle = ""
+    this.changeCategoryTitle.emit(this.newCategoryTitle)
+    this.newCategoryTitle = this.category.title
     this.setEditMode(false)
   }
 

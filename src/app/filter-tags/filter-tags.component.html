@@ -2,9 +2,9 @@
 <button (click)="addCategory()" class="btn btn-primary" type="button">add new category</button>
 <ng-container *ngFor="let category of categories, let i = index">
     <div class="card">
+        <button type="button" (click)="removeCategory(i)" class="btn btn-primary">delete category</button>
         <div class="card-body">
-            
-            <app-category [category]="category"></app-category>
+            <app-category (changeCategoryTitle)="changeCategoryTitle(i, $event)" [category]="category"></app-category>
         </div>
     </div>
 </ng-container>

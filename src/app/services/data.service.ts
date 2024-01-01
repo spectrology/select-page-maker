@@ -111,6 +111,17 @@ export class DataService {
     this.categoriesUpdate.next(this.categories)
   }
 
+  removeCategory(categoryIndex: number) {
+    // REMOVE ALL TAGS FROM CHARACTERS AS WELL
+    this.categories.splice(categoryIndex, 1)
+    this.categoriesUpdate.next(this.categories)
+  }
+
+  handleCategoryNameChange(categoryIndex: number, newCategories: Category[]) {
+    console.log("handle that shit")
+    this.updateCategories(newCategories)
+  }
+
   removeTag(categoryIndex: number, tagIndex: number) {
     this.categories[categoryIndex].tags.splice(tagIndex, 1)
     this.categoriesUpdate.next(this.categories)
@@ -122,6 +133,7 @@ export class DataService {
   }
 
   updateCategories(categories: any) {
+    this.categories = categories
     this.categoriesUpdate.next(categories);
   }
 
