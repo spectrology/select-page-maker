@@ -1,6 +1,7 @@
 ## TODO LIST FOR RELEASE
 
 # Character editor
+- Character sort feature?
 
 # Categories
 - warn user about removing categories
