@@ -17,6 +17,7 @@ import { JsonPipe } from '@angular/common';
 import { CategoryComponent } from './filter-tags/category/category.component';
 import { CharacterThemeDataComponent } from './character-editor/character-theme-data/character-theme-data.component';
 import { FormComponent } from './services/form/form/form.component';
+import { AlertContainerComponent } from './services/alert.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormComponent } from './services/form/form/form.component';
     ThemeSelectComponent,
     FilterTagsComponent,
     CategoryComponent,
+    AlertContainerComponent,
     CharacterThemeDataComponent,
     FormComponent],
   imports: [

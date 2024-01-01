@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { AlertService } from '../services/alert.service';
 
 type Category = {
   title: string,
@@ -15,7 +16,8 @@ type Category = {
 export class FilterTagsComponent {
 
   constructor(
-    private dataService: DataService
+    private dataService: DataService,
+    private alertService: AlertService
   ) {
     this.dataService.categoriesUpdate.subscribe((value: any) => {
       this.categories = value
@@ -53,7 +55,7 @@ export class FilterTagsComponent {
       this.categories[index].title = newTitle
       this.dataService.handleCategoryNameChange(index, this.categories)
     } else {
-      console.log(`alert: a category with the title ${newTitle} already exists.`)
+      this.alertService.alert('warning', `alert: a category with the title ${newTitle} already exists.`)
     }
   }
 

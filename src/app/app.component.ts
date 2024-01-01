@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import packageJson from '../../package.json';
+import { AlertService } from './services/alert.service';
 
 @Component({
   selector: 'app-root',
@@ -10,10 +11,18 @@ export class AppComponent {
   title = 'select-page-maker';
   public version: string = packageJson.version;
 
+  constructor(
+    private alertService: AlertService
+  ) {}
+
   show: any = {
     preview: false,
     characters: false,
     categories: true
+  }
+
+  alert() {
+    this.alertService.alert('danger', 'fuck fuck fuck')
   }
 
   keys(obj: any) {

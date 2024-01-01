@@ -1,3 +1,4 @@
+<app-alert-container></app-alert-container>
 <div class="container-fluid d-flex flex-column vh-100">
   <div class="row py-2">
     <div class="col col-12">
@@ -6,7 +7,7 @@
           <table class="h-100 w-100">
             <tr>
               <td style="vertical-align: middle">
-                <h4>Spec's Select Maker {{version}}</h4>
+                <h4>Spec's Select Maker <small class="text-muted" style="font-size: .5em">v{{version}}</small></h4>
               </td>
             </tr>
           </table>
@@ -20,7 +21,7 @@
           </div>
         </div>
         <div class="col col-3 text-right">
-          <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+          <button (click)="alert()" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
             sun
           </button>
         </div>

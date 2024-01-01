@@ -1,0 +1,10 @@
+<ng-template #toastTemplate let-message="message"> {{message}} </ng-template>
+
+<div style="position: absolute; right: 0; top: 0; z-index: 999">
+    <ng-container *ngFor="let toast of toastService.toasts; track toast">
+        <ngb-toast [class]="toast.classname" [autohide]="true" [delay]="3000"
+            (hidden)="toastService.remove(toast)">
+            <ng-template *ngTemplateOutlet="toastTemplate; context: toast"></ng-template>
+        </ngb-toast>
+    </ng-container>
+</div>

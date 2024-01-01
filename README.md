@@ -11,7 +11,6 @@
 - Filter
 - Dark/light view
 - Helptext (for icons etc)
-- Alert system
 
 # Themes
 - Add icons
@@ -19,6 +18,7 @@
 # Preview
 
 ## COMPLETED
+- Alert service
 - dont allow categories with same name
 - allow deleting categories
 - Prevent duplicates
