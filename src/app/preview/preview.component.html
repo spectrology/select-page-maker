@@ -25,13 +25,14 @@
     <div class="row flex-fill fill d-flex">
         <div class="col col-2 bg-light" style="max-height: 100vh">
             <div class="row">
+                Filters
                 <div class="col option-set" *ngFor="let category of categories"
                     [attr.data-filter-group]="category.title">
-                    {{category.title}}
+                    {{category.title | titlecase}}
                     <a href="#" data-filter-value=""
-                        class="col filter btn rounded-0 btn-outline-dark active">All</a>
+                        class="col filter btn rounded-0 btn-outline-dark active btn-sm p-1 mb-1">All</a>
                     <a href="#" *ngFor="let tag of category.tags" [attr.data-filter-value]="'.'+tag"
-                        class="col filter btn rounded-0 btn-outline-dark">{{tag | titlecase}}</a>
+                        class="col filter btn rounded-0 btn-outline-dark btn-sm p-1 mb-1">{{tag | titlecase}}</a>
                 </div>
             </div>
         </div>
