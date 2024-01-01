@@ -15,7 +15,12 @@ export class DataService {
       name: 'Firsty Lastes',
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quam orci, malesuada nec velit cursus, aliquam blandit diam. Sed rutrum tellus erat, eu suscipit tellus aliquet quis.',
       imgUrl: 'https://64.media.tumblr.com/ec1319e2774236e79f69649f7d95ecb3/7fe09b0c24a6e82b-c6/s400x600/c343b64ebe88c41dde840cfb9c14e2e528b53b3e.pnj'
-    }, tags: [], themeData: {}
+    }, tags: [
+      {
+        category: 'caste',
+        tag: 'purple'
+      }
+    ], themeData: {}
   }]
 
   charactersUpdate: Subject<any> = new Subject<any>();

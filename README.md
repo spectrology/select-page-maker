@@ -10,6 +10,8 @@
 - Filter
 - Dark/light view
 - Helptext (for icons etc)
+- collapsable sidebar
+- html download
 
 # Themes
 

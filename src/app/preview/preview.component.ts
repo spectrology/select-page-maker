@@ -72,7 +72,7 @@ export class PreviewComponent {
               filterGroup = filters[group] = [];
           }
           var $selectAll = $optionSet.find('a[' + filterAttr + '=""]'); // the 'select all' button in the current group
-          var activeClass = "selected", // the class for active links
+          var activeClass = "active", // the class for active links
               exclClass = "exclusive"; // the class for exclusive groups
           comboFiltering($this, filters, filterAttr, filterValue, $optionSet, group, $selectAll, activeClass, exclClass);
           var comboFilter = getComboFilter(filters);

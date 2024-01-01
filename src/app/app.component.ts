@@ -16,9 +16,9 @@ export class AppComponent {
   ) {}
 
   show: any = {
-    preview: false,
+    preview: true,
     characters: false,
-    categories: true
+    categories: false
   }
 
   alert() {

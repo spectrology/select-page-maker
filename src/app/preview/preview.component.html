@@ -18,39 +18,46 @@
 
 
     <!-- FILTER CODE -->
-    
+
 
     <!-- FILTER BLOCK -->
 
-    <div class="row">
-        filter characters
-        <div class="col bg-primary option-set" *ngFor="let category of categories"
-            [attr.data-filter-group]="category.title">
-            {{category.title}}
-            <a href="#" data-filter-value="" class="col filter m-1 selected btn rounded-0 btn-outline-light">All</a>
-            <a href="#" *ngFor="let tag of category.tags" [attr.data-filter-value]="'.'+tag"
-                class="col filter m-1 btn rounded-0 btn-outline-light">{{tag | titlecase}}</a>
+    <div class="row flex-fill fill d-flex">
+        <div class="col col-2 bg-light" style="max-height: 100vh">
+            <div class="row">
+                <div class="col option-set" *ngFor="let category of categories"
+                    [attr.data-filter-group]="category.title">
+                    {{category.title}}
+                    <a href="#" data-filter-value=""
+                        class="col filter btn rounded-0 btn-outline-dark active">All</a>
+                    <a href="#" *ngFor="let tag of category.tags" [attr.data-filter-value]="'.'+tag"
+                        class="col filter btn rounded-0 btn-outline-dark">{{tag | titlecase}}</a>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="col" style="height: 100vh; overflow: auto">
+            <div class="row filter-container ">
+                <ng-container *ngIf="theme == 'card'">
+                    <div *ngFor="let character of characters"
+                        class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item"
+                        [ngClass]="getTagsAsArray(character)">
+                        <app-card-chara [character]="character"></app-card-chara>
+                    </div>
 
-    <div class="row filter-container">
-        <ng-container *ngIf="theme == 'card'">
-            <div *ngFor="let character of characters" class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item"
-                [ngClass]="getTagsAsArray(character)">
-                <app-card-chara [character]="character"></app-card-chara>
+                </ng-container>
+
+                <!-- TODO: use ng switch -->
+
+                <ng-container *ngIf="theme =='stats'">
+                    <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item"
+                        *ngFor="let character of characters">
+                        <app-stats-chara [character]="character"></app-stats-chara>
+                    </div>
+                </ng-container>
             </div>
-
-        </ng-container>
-
-        <!-- TODO: use ng switch -->
-
-        <ng-container *ngIf="theme =='stats'">
-            <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item" *ngFor="let character of characters">
-                <app-stats-chara [character]="character"></app-stats-chara>
-            </div>
-        </ng-container>
+        </div>
     </div>
 </div>
 
-!NOTE! Preview responsiveness will not be accurate within application. <a href="/">View as popout</a> for accurate
-responsive behavior.
+<!-- !NOTE! Preview responsiveness will not be accurate within application. <a href="/">View as popout</a> for accurate
+responsive behavior. -->
