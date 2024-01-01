@@ -207,7 +207,7 @@ Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
 
 
-@fortawesome/free-regular-svg-icons
+@fortawesome/free-solid-svg-icons
 (CC-BY-4.0 AND MIT)
 Fonticons, Inc. (https://fontawesome.com)
 
