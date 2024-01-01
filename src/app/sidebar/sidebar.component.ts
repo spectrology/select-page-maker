@@ -76,4 +76,15 @@ export class SidebarComponent {
     
   }
 
+  downloadHTML() {
+    let html = document.getElementById("previewContainer")?.innerHTML || ""
+    var element = document.createElement('a');
+    element.setAttribute('href', "data:text/html;charset=UTF-8," + encodeURIComponent(html));
+    element.setAttribute('download', "my-character-page.html");
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click(); // simulate click
+    document.body.removeChild(element);
+  }
+
 }

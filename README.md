@@ -12,13 +12,14 @@
 - Dark/light view
 - Helptext (for icons etc)
 - collapsable sidebar
-- html download
+- get export working
 
 # Themes
 
 # Preview
 
 # Bugs
+- NO SCRIPTS IN BUILD????? HELLO???
 - Preview needs to be toggled before it works
 - One filter should be open by default or they should be collapseable
 

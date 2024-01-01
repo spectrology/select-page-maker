@@ -2,92 +2,87 @@
     <button (click)="toggleMenus()" class="btn btn-primary">Hide sidebar and topbar</button>
 </div>
 
-<div id="previewContainer" class="container-fluid">
+<div id="previewContainer">
+    <div class="container-fluid bg-secondary">
 
-    <!-- DEPENDENCIES -->
-    <!-- BOOTSTRAP & POPPERJS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-        crossorigin="anonymous"></script>
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- COMBOFILTER -->
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://static.tumblr.com/p0knose/FpAp5c11c/magnusthemes.combofilters.js"></script>
+        <!-- DEPENDENCIES -->
+        <!-- BOOTSTRAP & POPPERJS -->
 
 
-    <!-- FILTER CODE -->
+
+        <!-- FILTER CODE -->
 
 
-    <!-- FILTER BLOCK -->
+        <!-- FILTER BLOCK -->
 
-    <div class="row">
-        <div class="col col-2 d-none d-sm-block bg-dark text-light" style="max-height: 100vh; max-width: 200px;">
-            <div class="row text-center" style="height: 100%">
-                <table style="height: 100%">
-                    <tbody>
-                        <td class="align-middle">
-                            <h4>Filters</h4>
-                            <div id="accordion">
-                                <div class="col" *ngFor="let category of categories"
-                                    [attr.data-filter-group]="category.title">
+        <div class="row">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+                integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+                crossorigin="anonymous">
+            <div class="col col-2 d-none d-sm-block bg-dark text-light" style="max-height: 100vh; max-width: 200px;">
+                <div class="row text-center" style="height: 100%">
+                    <table style="height: 100%; width: 100%">
+                        <tbody>
+                            <td class="align-middle">
+                                <h4>Filters</h4>
+                                <div id="accordion">
+                                    <div class="col" *ngFor="let category of categories"
+                                        [attr.data-filter-group]="category.title">
 
 
-                                    <div [id]="'heading'+category.title">
-                                        <a class="text-light" style="cursor: pointer" data-toggle="collapse"
-                                            [attr.data-target]="'#'+category.title" aria-expanded="true"
-                                            [attr.aria-controls]="category.title">
-                                            <h5>{{category.title | titlecase}}</h5>
-                                        </a>
-                                    </div>
-
-                                    <div [id]="category.title" class="collapse container-fluid"
-                                        [attr.aria-labelledby]="'heading'+category.title" data-parent="#accordion">
-                                        <div class="row overflow-hidden filter option-set" data-filter-group="group2">
-                                            <a href="#" data-filter-value=""
-                                                class="col filter btn rounded-0 btn-outline-light active btn-sm p-1 mb-1">All</a>
-                                            <a href="#" *ngFor="let tag of category.tags"
-                                                [attr.data-filter-value]="'.'+tag"
-                                                class="col col-12 filter btn rounded-0 btn-outline-light btn-sm p-1 mb-1">
-                                                {{tag |titlecase}}
+                                        <div [id]="'heading'+category.title">
+                                            <a class="text-light" style="cursor: pointer" data-toggle="collapse"
+                                                [attr.data-target]="'#'+category.title" aria-expanded="true"
+                                                [attr.aria-controls]="category.title">
+                                                <h5>{{category.title | titlecase}}</h5>
                                             </a>
                                         </div>
+
+                                        <div [id]="category.title" class="collapse container-fluid"
+                                            [attr.aria-labelledby]="'heading'+category.title" data-parent="#accordion">
+                                            <div class="row overflow-hidden filter option-set"
+                                                data-filter-group="group2">
+                                                <a href="#" data-filter-value=""
+                                                    class="col filter btn rounded-0 btn-outline-light active btn-sm p-1 mb-1">All</a>
+                                                <a href="#" *ngFor="let tag of category.tags"
+                                                    [attr.data-filter-value]="'.'+tag"
+                                                    class="col col-12 filter btn rounded-0 btn-outline-light btn-sm p-1 mb-1">
+                                                    {{tag |titlecase}}
+                                                </a>
+                                            </div>
+                                        </div>
+
                                     </div>
-
                                 </div>
-                            </div>
 
-                        </td>
-                    </tbody>
-                </table>
+                            </td>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-        <div class="col m-2" style="height: 100vh; overflow: auto">
+            <div class="col m-2" style="height: 100vh; overflow: auto">
 
-            <ng-container *ngIf="theme == 'card'">
-                <div class="row">
-                    <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-0 offset-md-1 offset-lg-0 col-lg-12">
-                        <div class="row justify-content-center filter-container">
-                            <ng-container *ngFor="let character of characters">
-                                <app-card-chara [character]="character"></app-card-chara>
-                            </ng-container>
+                <ng-container *ngIf="theme == 'card'">
+                    <div class="row">
+                        <div class="col-12 col-sm-10 offset-sm-1 col-md-10 offset-0 offset-md-1 offset-lg-0 col-lg-12">
+                            <div class="row justify-content-center filter-container">
+                                <ng-container *ngFor="let character of characters">
+                                    <app-card-chara [character]="character"></app-card-chara>
+                                </ng-container>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </ng-container>
+                </ng-container>
 
-            <!-- TODO: use ng switch -->
+                <!-- TODO: use ng switch -->
 
-            <ng-container *ngIf="theme =='stats'">
-                <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item" *ngFor="let character of characters">
-                    <app-stats-chara [character]="character"></app-stats-chara>
-                </div>
-            </ng-container>
+                <ng-container *ngIf="theme =='stats'">
+                    <div class="col col-12 col-md-6 col-lg-4 col-xl-3 p-1 filter-item"
+                        *ngFor="let character of characters">
+                        <app-stats-chara [character]="character"></app-stats-chara>
+                    </div>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>

@@ -51,7 +51,7 @@ export class PreviewComponent {
       // s.type = 'text/query';
       s.src = dependency;
       s.text = ``;
-      this.renderer2.appendChild(this._document.body, s);
+      this.renderer2.appendChild(this._document.getElementById("previewContainer"), s);
     }
 
     // Filter script
