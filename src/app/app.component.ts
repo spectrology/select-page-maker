@@ -21,8 +21,10 @@ export class AppComponent {
     categories: false
   }
 
-  alert() {
-    this.alertService.alert('danger', 'fuck fuck fuck')
+  displayMenus: boolean = true;
+
+  toggleMenus() {
+    this.displayMenus = !this.displayMenus
   }
 
   keys(obj: any) {

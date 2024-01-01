@@ -1,4 +1,4 @@
-import { Component, Inject, Renderer2 } from '@angular/core';
+import { Component, EventEmitter, Inject, Output, Renderer2 } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Category, Character } from '../models/data-models';
 import { DOCUMENT } from '@angular/common';
@@ -29,6 +29,12 @@ export class PreviewComponent {
     this.dataService.categoriesUpdate.subscribe((value: any[]) => {
       this.categories = value
     })
+  }
+
+  @Output() toggleMenu: EventEmitter<any> = new EventEmitter();
+
+  toggleMenus() {
+    this.toggleMenu.emit()
   }
 
   ngOnInit() {

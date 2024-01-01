@@ -1,6 +1,6 @@
 <app-alert-container></app-alert-container>
 <div class="container-fluid d-flex flex-column vh-100">
-  <div class="row py-2">
+  <div *ngIf="displayMenus" class="row py-2">
     <div class="col col-12">
       <div class="row">
         <div class="col col-3">
@@ -29,13 +29,13 @@
     </div>
   </div>
   <div class="row flex-fill fill d-flex">
-    <div class="col col-3 bg-primary">
+    <div *ngIf="displayMenus" class="col col-3 bg-primary">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="col col-9">
+    <div class="col">
       <div class="row">
-        <div *ngIf="show.preview" class="col p-0 bg-secondary" style="max-height: calc(100vh - 54px); overflow: auto">
-          <app-preview></app-preview>
+        <div *ngIf="show.preview" class="col p-0 bg-secondary">
+          <app-preview (toggleMenu)="toggleMenus()"></app-preview>
         </div>
         <div *ngIf="show.characters" class="col bg-warning" style="max-height: calc(100vh - 54px); overflow: auto">
           <app-character-editor></app-character-editor> <!-- TODO: make this dynamic / use grid -->
