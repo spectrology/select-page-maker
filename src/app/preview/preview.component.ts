@@ -90,7 +90,7 @@ export class PreviewComponent {
           console.log(filterGroup)
       });
     });`;
-    this.renderer2.appendChild(this._document.body, s);
+    this.renderer2.appendChild(this._document.getElementById("previewContainer"), s);
   }
 
   getTagsAsArray(character: Character) {
