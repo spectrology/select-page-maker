@@ -1,6 +1,7 @@
 ## TODO LIST FOR RELEASE
 
 # Character editor
+- Character sort feature?
 
 # Categories
 - warn user about removing categories
@@ -9,6 +10,8 @@
 - Filter
 - Dark/light view
 - Helptext (for icons etc)
+- collapsable sidebar
+- html download
 
 # Themes
 
