@@ -113,12 +113,39 @@ export class DataService {
 
   removeCategory(categoryIndex: number) {
     // REMOVE ALL TAGS FROM CHARACTERS AS WELL
+    let removedCategoryName = this.categories[categoryIndex].title
+    for (let character in this.characters) {
+      this.characters[character].tags = this.characters[character].tags.filter(tag => {
+        if (tag.category = removedCategoryName) {
+          return false
+        } else {
+          return true
+        }
+      })
+    }
+
     this.categories.splice(categoryIndex, 1)
     this.categoriesUpdate.next(this.categories)
   }
 
   handleCategoryNameChange(categoryIndex: number, newCategories: Category[]) {
-    console.log("handle that shit")
+    // Update across all characters
+    let oldTitle = this.categories[categoryIndex].title
+    let newTitle = newCategories[categoryIndex].title
+
+    for (let character in this.characters) {
+      this.characters[character].tags = this.characters[character].tags.map(tag => {
+        if (tag.category = oldTitle) {
+          return {
+            ...tag,
+            category: newTitle
+          }
+        } else {
+          return tag
+        }
+      })
+    }
+    this.updateCharacters(this.characters)
     this.updateCategories(newCategories)
   }
 

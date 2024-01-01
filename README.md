@@ -3,9 +3,7 @@
 # Character editor
 
 # Categories
-- remove nonapplicable tags if categories are edited
-- warn user about this
-- editing category title should update it everywhere (like in character data)
+- warn user about removing categories
 
 # Features
 - Filter
@@ -18,6 +16,8 @@
 # Preview
 
 ## COMPLETED
+- editing category title should update it everywhere (like in character data)
+- remove nonapplicable tags if categories are edited
 - Alert service
 - dont allow categories with same name
 - allow deleting categories
