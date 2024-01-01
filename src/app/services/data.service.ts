@@ -62,12 +62,15 @@ export class DataService {
     }
   }
 
+  themeOptionsUpdate: Subject<any> = new Subject<any>();
+
   setTheme(theme: string) {
     this.themeChange.next(theme);
   }
 
   setThemeOptions(themeOptions: any, theme: string) {
     this.allThemesData[theme].options = themeOptions
+    this.themeOptionsUpdate.next(this.allThemesData[theme].options)
   }
 
   // CHARACTERS
