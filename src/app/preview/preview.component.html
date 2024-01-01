@@ -67,8 +67,8 @@
                 </table>
             </div>
         </div>
-        <div class="col p-3" style="height: 100vh; overflow: auto">
-            <div class="row filter-container ">
+        <div class="col" style="height: 100vh; overflow: auto">
+            <div class="row filter-container p-4">
                 <ng-container *ngIf="theme == 'card'">
                     <ng-container *ngFor="let character of characters">
                         <app-card-chara [character]="character"></app-card-chara>
