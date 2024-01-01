@@ -11,7 +11,6 @@
 - Helptext (for icons etc)
 
 # Themes
-- Add icons
 
 # Preview
 
@@ -19,6 +18,7 @@
 - editing category title should update it everywhere (like in character data)
 - remove nonapplicable tags if categories are edited
 - Alert service
+- Add icons
 - dont allow categories with same name
 - allow deleting categories
 - Prevent duplicates

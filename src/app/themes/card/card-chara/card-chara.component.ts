@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { faCircle, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faDroplet, faQuestion, faCalendar, faCircle, faUser, faHouse, faEnvelope, faStar, faHeart, faComment, faPen, faGear, faCamera, faHand, faKey, faPalette, faShield } from '@fortawesome/free-solid-svg-icons';
 import { Character } from 'src/app/models/data-models';
 import { DataService } from 'src/app/services/data.service';
 
@@ -19,12 +19,24 @@ export class CardCharaComponent {
     })
   }
 
-  faUser = faUser;
-  faCircle = faCircle;
-
   icons: any = {
     user: faUser,
-    circle: faCircle
+    circle: faCircle,
+    unknown: faQuestion,
+    droplet: faDroplet,
+    calendar: faCalendar,
+    house: faHouse,
+    envelope: faEnvelope,
+    star: faStar,
+    heart: faHeart,
+    comment: faComment,
+    pen: faPen,
+    gear: faGear,
+    camera: faCamera,
+    hand: faHand,
+    key: faKey,
+    palette: faPalette,
+    sheild: faShield
   }
 
   themeOptions: any = this.dataService.allThemesData[this.dataService.theme].options;
