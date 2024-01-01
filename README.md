@@ -19,7 +19,7 @@
 # Preview
 
 # Bugs
-- NO SCRIPTS IN BUILD????? HELLO???
+- Fontawesome breaks in export
 - Preview needs to be toggled before it works
 - One filter should be open by default or they should be collapseable
 
