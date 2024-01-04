@@ -132,7 +132,7 @@ export class DataService {
 
     for (let character in this.characters) {
       this.characters[character].tags = this.characters[character].tags.map(tag => {
-        if (tag.category = oldTitle) {
+        if (tag.category === oldTitle) {
           return {
             ...tag,
             category: newTitle
