@@ -2,6 +2,34 @@
     <button (click)="toggleMenus()" class="btn btn-primary">Hide sidebar and topbar</button>
 </div>
 
+<script>
+    var $grid = $container.isotope({
+        itemSelector: ".item", // the elements to filter
+        percentPosition: true // put true if you use percentage widths, otherwise put false
+    });
+    $(".option-set a").click(function (e) {
+        var $this = $(this); // cache the clicked link
+        var filterAttr = "data-filter-value";
+        var filterValue = $this.attr(filterAttr); // cache the filter
+        var $optionSet = $this.parents(".option-set"); // cache the parent element
+        var group = $optionSet.attr("data-filter-group"); // cache the parent filter group
+        var filterGroup = filters[group];
+        if (!filterGroup) {
+            filterGroup = filters[group] = [];
+        }
+        var $selectAll = $optionSet.find('a[' + filterAttr + '=""]'); // the 'select all' button in the current group
+        var activeClass = "selected", // the class for active links
+            exclClass = "exclusive"; // the class for exclusive groups
+        comboFiltering($this, filters, filterAttr, filterValue, $optionSet, group, $selectAll, activeClass, exclClass);
+        var comboFilter = getComboFilter(filters);
+        $grid.isotope({
+            filter: comboFilter
+        });
+        $this.toggleClass(activeClass);
+        e.preventDefault();
+    });
+</script>
+
 <div id="previewContainer">
     <div class="container-fluid bg-secondary">
 
@@ -26,7 +54,7 @@
                             <td class="align-middle">
                                 <h4>Filters</h4>
                                 <div id="accordion">
-                                    <div class="col" *ngFor="let category of categories"
+                                    <div class="col" *ngFor="let category of categories; let i = index"
                                         [attr.data-filter-group]="category.title">
 
 
@@ -38,7 +66,8 @@
                                             </a>
                                         </div>
 
-                                        <div [id]="category.title" class="collapse container-fluid"
+                                        <div [id]="category.title"
+                                            [class]="'collapse container-fluid' + (i == 0 ? ' show' : '')"
                                             [attr.aria-labelledby]="'heading'+category.title" data-parent="#accordion">
                                             <div class="row overflow-hidden filter option-set"
                                                 data-filter-group="group2">
